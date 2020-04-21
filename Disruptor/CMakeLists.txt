@@ -119,9 +119,11 @@ target_link_libraries(DisruptorShared ${Boost_LIBRARIES})
 set_target_properties(DisruptorShared PROPERTIES OUTPUT_NAME Disruptor)
 set_target_properties(DisruptorShared PROPERTIES VERSION ${DISRUPTOR_VERSION})
 set_target_properties(DisruptorShared PROPERTIES SOVERSION ${DISRUPTOR_VERSION_MAJOR})
+set_target_properties(DisruptorShared PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 add_library(DisruptorStatic STATIC ${Disruptor_sources})
 set_target_properties(DisruptorStatic PROPERTIES OUTPUT_NAME Disruptor)
+set_target_properties(DisruptorStatic PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 install(FILES ${Disruptor_headers} DESTINATION include/Disruptor)
 

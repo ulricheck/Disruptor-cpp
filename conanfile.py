@@ -24,6 +24,8 @@ class DiscruptorConan(ConanFile):
         )
 
     default_options = {
+        "Boost:shared": True,
+        "Boost:fPIC": True,
     }
 
     # all sources are deployed with the package
